@@ -1,0 +1,19 @@
+Run cmd as administrator 
+C:\Windows\System32>bcdedit /set {current} safeboot minimal
+then restart into BIOS setup, change SATA operation to AHCI from RAID On then F10 (save and exit) to continue boot/loading windows in safe mode.
+Run cmd as administrator again
+C:\Windows\System32>bcdedit /deletevalue {current} safeboot 
+
+I came close to trying but in the end did not disable secure boot as suggested in the 'medium' article link in this comment:
+
+I actually disagree with some advice given in The Odin Project discord forums:
+and i can see many many people woudl have been discouraged from doing so, so again hopefully this wil encourage some of those who otherwise may not have to go ahewad with it.
+
+Stats on how many people use linux
+how many use different browsers
+
+we're still among the few
+it is not particularly well trafficed territory
+and i am not sure about the incentives, but vested interests are with teh likes of microsoft who are hardly likely to encourage people to use open source operating systems like linux in favour of their own (within an ecosystem they are able to monetise, whether they charge specifically for Windows 10/11 or not).   
+
+so the point being, it is no wonder it is uncomfortable and that makes rarity make it more worthwhile and valuable not less. So join me and go for it!

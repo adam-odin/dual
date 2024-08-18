@@ -6,22 +6,39 @@
     <title>Check UEFI Settings and Safe Mode</title>
 </head>
 <body>
-    <h1>Check UEFI Settings</h1>
-    <p>The UEFI settings control how your machine starts up: I am making another ordered list here because it is important to get each of these steps right! </p>
+    <p>As I am revisiting this for writing up this section, I remember this was more complicated than it first appeared - but not insurmountable!</p>
+
+    <p>I am making another ordered list here because it is important to get each of these steps right!</p>
+
+    <p>*And by way of warning, there is quite a lot of restarting initialy so bear with it *</p>
     <ol>
-        <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
         <li>Change your restart to Safe Mode</li>
+        <li>Go to your EUFI/BIOS settings menu by restarting your computer and pressing F2 immediately upon restart then selecting BIOS setup</li>
+        <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
+        <li>Save and Exit and continue to verify that windows still reboots correctly in safe mode</li>
+        <li>Change your restart to Safe Mode</li>
+        <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
+        <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
         <li>Consider changing your Secure Boot to "Disabled"</li>
         <li>You might need to change your Start Override values to zero however I wouldn't bother with this is you don't need to</li>
     </ol>
 
-    <p>You will get plenty of severe looking warnings along the way so we'll walk through each step in a little more detail so you have confidence to forge ahead despite the warnings - and hopefully your confidence is justified, or at least we can find an easy fix if it goes wrong.</p>
+    <p>You will get plenty of severe looking warnings along the way so we'll walk through each step in a little more detail so you have confidence to forge ahead despite the warnings - and hopefully your confidence is justified, or at least you can easily fix it if you find something goes wrong.</p>
 
+    <h1>Change UEFI Settings</h1>
+    <p>The UEFI settings control how your machine starts up: <br>
+    Go to UEFI / BIOS settings menu
+    Restart your laptop.  Immediately upon starting up hit F2 (This key varies by manufacturer but is often one of the following: Esc, Delete, F1, F2, F10, F11, or F12.</p>
+    
+
+    <p>Advanced Startup (Windows Method): If you have Windows installed, you can also access UEFI settings through the operating system. Go to Settings > Update & Security > Recovery, and under Advanced startup, click Restart now. Then select Troubleshoot > Advanced Options > UEFI Firmware Settings, and click Restart</p>
 
     <h1>Change restart to Safe Mode</h1>
 
     <h1>Secure Boot</h1>
 
-    <p>Again, these are the links to external websites I used when researching how to do this.</p> 
+    <p>Again, these are the links to external websites I used when researching how to do this.<br>
+    <a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">About The Odin Project</a>
+    </p> 
 </body>
 </html>
