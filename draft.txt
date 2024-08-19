@@ -17,3 +17,154 @@ it is not particularly well trafficed territory
 and i am not sure about the incentives, but vested interests are with teh likes of microsoft who are hardly likely to encourage people to use open source operating systems like linux in favour of their own (within an ecosystem they are able to monetise, whether they charge specifically for Windows 10/11 or not).   
 
 so the point being, it is no wonder it is uncomfortable and that makes rarity make it more worthwhile and valuable not less. So join me and go for it!
+
+some of the reasons you might not
+don;t want to commiit
+don't have space
+(30gb+ contiguous)
+risky with all the other things going on with disk partiitons etc. ?
+what if things go wrong?
+
+
+inconveniences with virtual machines
+ultimately waste quite a lot of spacehave to carve out the space whether use it or not if you decide you kill the virtual machine it still appears space is used until you go back to device manager and confidently remove it
+
+I would actually suggest naming it ubuntu ssd and ubuntu hdd
+ubuntu won't see the names of the partitions you give it in windows  
+this gets aroudn at leats some of the space requirement
+
+i think you still want at least 20GB ideally but i have managed with 19 and 
+
+file corruption so doesn't recognise the file types in ubuntu... even though they coudl be text files
+
+backup storgae right there in git: create a repository, save files and you can access them or clone them... 
+git does what it does with version control.
+i don;t know why text  files in one and the other can;t talk to each other, come to think of it.
+
+get to course and get to ARC!!!!
+
+
+ne additional comment is: the values in Registry Editor / StartOverride automatically went back to 3 (having painstakingly changed them to 0, multiple times) and it doesn't seem to make a difference... perhaps it helped when I made the change from RAID On to AHCI but I can't tell and it doesn't seem to have make a difference any longer: I think Windows deals fine with the change from RAID On to AHCI: it just needs to start in safemode once.  It is great to have the setting that works for both ubuntu and Windows (no one doesn't need to switch from RAID On for Windows to AHCI for ubuntu each time booting one or the other, which was a question I wondered about and I have seen at least one other person ask)
+adam-odin — 08/12/2024 4:18 PM
+ok, the answer that helped me solve the problem of windows booting with ACHI (instead of RAID On) is as simple as loading windows in safe mode once after changing BIOS and then immediately changing safe mode off again after windows successfully booted in safe mode.
+It is currently the second answer (most upvotes) shown in the picture attached and can be found at this link:
+https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10
+Image
+Super User
+Switch RAID to AHCI without reinstalling Windows 10
+My Dell XPS 9560 uses RAID as a SATA controller mode.
+
+After I change it to AHCI, the Windows 10 will not boot.
+
+What should I do if I don't want to reinstall Windows 10?
+RAID = Redundant Array of
+Image
+adam-odin — 08/12/2024 3:41 PM
+also this, similar problem: it seems windows expects RAID On and doesn't boot with ACHI whereas ubuntu requires ACHI and doesn't work with RAID On (for SATA Operation in BIOS setup / Advanced).
+⁠ubuntu-help⁠ 
+adam-odin
+ changed the channel name: 
+Dual boot issues (Windows 10 Alienware trying to install ubuntu)
+ — 08/12/2024 3:36 PM
+adam-odin — 08/12/2024 3:36 PM
+Just adding more information as I continue to work on this and search for previous comments from those who have kindly responded to similar queries in the past: this seems most relevant so far. 
+EDIT: I found a solution which worked for me, described in the comment below.
+Run cmd as administrator 
+C:\Windows\System32>bcdedit /set {current} safeboot minimal
+then restart into BIOS setup, change SATA operation to AHCI from RAID On then F10 (save and exit) to continue boot/loading windows in safe mode.
+Run cmd as administrator again
+C:\Windows\System32>bcdedit /deletevalue {current} safeboot 
+
+I came close to trying but in the end did not disable secure boot as suggested in the 'medium' article link in this comment:
+⁠ubuntu-help⁠ 
+adam-odin
+ started a thread: 
+Dual boot issues (Windows 10 Alienware trying to install ubuntu)
+. See all 
+threads
+.
+ — 08/12/2024 3:36 PM
+adam-odin — 08/12/2024 2:01 PM
+EDIT: PROBLEM SOLVED. If changing SATA operation from RAID On to AHCI first start windows in safe mode...
+ 
+I am trying to install ubuntu as a dual boot but my windows won't boot when i change BIOS setup "SATA Operation" to "AHCI" from "RAID On". 
+I did backup files beforehand and I am able to boot windows again (I believe without any loss) after changing BIOS setup back to RAID On during restart.
+I have used the Odin Project / Itsfoss / freecodecamp / ubuntu documentation links to download ubuntu and used rufus to create usb drive. 
+I used the disk manager to partition a  19GB space in SSD (smaller than I would like but I believe just enough) and 200GB  space in HDD and label them. 
+I changed BIOS setup (enabling "USB wake support" and successfully created "Boot Option" pointing to the bootx64.efi file in the USB). 
+That got me to the menu including *Try or Install Ubuntu. I am committed so decided to go straight for install. 
+However during the set up I ran into: "Turn off RST.  This computer uses Intel RST (Rapid Storage Technology) You need to turn off RST before installing...
+I then followed ubuntu documentation instructions to: 
+set the value to zero for four files in Registry Editor: Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services \storahci\Start  \storahci\StartOverride\0 \iaStorV\Start \iaStorV\StartOverride\0.  Incidentally, even running Registry Editor as administrator these Override value seem to change back to value of 3 upon restart.
+All of this is  context for the problem which is windows doesn't seem to be able to boot (and I feared losing ability to boot windows again) with AHCI instead of RAID On. 
+Has anyone else run into this problem? Does anyone know how I can fix it and get on with dual boot?  Many thanks, Adam 
+adam-odin
+ joined the party.
+
+ more info about secure boot, from exchange with perplexity about what the reason is and the action plan "agreed upon".
+
+ Thesis: learnign to work with AI is at least as important as learnign to work with people.
+ Could be managing
+ depends on what you're trying to achieve
+ i don't want to hard sell
+ I have settled for having less money and workign on something i want to work on
+ i hope that doing it properly and doing it well will ultimately lead to income. it should do: i am not dumb and if i care i can add value and it doesn;t have to be much.
+ that is what i have accepted: i have moved on in my mind and accepted a super shit life in exchange for building from this very basic point.
+
+ while text is pleasing, working programs are the objective.
+ scripts that add value in the real world!!
+ programs that mine or harvest or facilitate learning...
+
+ and training AI has got to be ultimately of value - if and it is a big if, I can make an original contribution there.
+
+ Finding ways of communicating.
+ Taking time and caring and thinking about how best to present it.
+ Adding value because I can.
+and leaving it out there for others to learn from.
+seems appealing.
+now to put it into practice!
+
+mission: open source
+educational Technology
+and assistive Ai: putting machines that work into the hands of people that don't can't won't aretrying to.
+
+learn and share as it goes
+always informing and educating... teaching to help you with the next part!
+
+
+Compare this answer:
+To change your computer's restart setting to boot into Safe Mode, follow these steps:
+
+    Using the Power Icon:
+        On the Windows sign-in screen or from the Start menu, press and hold the Shift key on your keyboard.
+        While holding the Shift key, click the Power icon and select Restart.
+        After your computer restarts, it will display the Choose an option screen. Select Troubleshoot, then Advanced options, and finally Startup Settings.
+        Click Restart again, and once your computer restarts, you'll see a list of options. Choose Safe Mode by pressing 4 or F4, or Safe Mode with Networking by pressing 5 or F5 if you need internet access
+
+    .
+
+Using the Settings App:
+
+    Open Settings by pressing Windows logo key + I.
+    Navigate to System > Recovery.
+    Under Recovery options, next to Advanced startup, click Restart now.
+    Your PC will restart to the Choose an option screen. From there, select Troubleshoot > Advanced options > Startup Settings, and click Restart.
+    After the restart, choose the Safe Mode option you need
+
+    .
+
+Using System Configuration (msconfig):
+
+    Press Windows key + R to open the Run dialog.
+    Type msconfig and press Enter.
+    In the System Configuration window, go to the Boot tab.
+    Under Boot options, check Safe boot and select the type of Safe Mode you want (Minimal, Alternate shell, Network).
+    Click OK and restart your computer. Your PC will boot into Safe Mode automatically until you change this setting back
+
+        .
+
+These methods allow you to start your Windows PC in Safe Mode, which is useful for troubleshooting issues by loading only essential system files and drivers.
+
+to the cmd as admin safeboot value current minimal. so easy!!!
+but have to be comfortable with command line? 
+if you're linux ing you're using the command line anyway!

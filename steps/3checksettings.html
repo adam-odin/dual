@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check UEFI Settings and Safe Mode</title>
+    <title>Check UEFI/BIOS Settings and Safe Mode</title>
 </head>
 <body>
     <p>As I am revisiting this for writing up this section, I remember this was more complicated than it first appeared - but not insurmountable!</p>
 
     <p>I am making another ordered list here because it is important to get each of these steps right!</p>
 
-    <p>*And by way of warning, there is quite a lot of restarting initialy so bear with it *</p>
+    <p>*And by way of warning, there is quite a lot of restarting initially so bear with it *</p>
+
+    <p>Run cmd as administrator <br>
+        C:\Windows\System32>bcdedit /set {current} safeboot minimal<br>
+        then restart into BIOS setup<br>
+        In the BIOS settings change SATA operation to AHCI from RAID <br>
+        Only then F10 (save and exit) to continue boot/loading windows in safe mode.<br>
+        Run cmd as administrator again<br>
+        C:\Windows\System32>bcdedit /deletevalue {current} safeboot </p>
     <ol>
         <li>Change your restart to Safe Mode</li>
         <li>Go to your EUFI/BIOS settings menu by restarting your computer and pressing F2 immediately upon restart then selecting BIOS setup</li>
         <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
         <li>Save and Exit and continue to verify that windows still reboots correctly in safe mode</li>
-        <li>Change your restart to Safe Mode</li>
+        <li>Change your restart mode back to normal</li>
         <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
         <li>Change your UEFI setting from "RAID On" to "AHCI"</li>
         <li>Consider changing your Secure Boot to "Disabled"</li>
@@ -35,7 +43,19 @@
 
     <h1>Change restart to Safe Mode</h1>
 
+    <p>similar problem: it seems windows expects RAID On and doesn't boot with ACHI whereas ubuntu requires ACHI and doesn't work with RAID On (for SATA Operation in BIOS setup / Advanced).</p>
+
+    <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Superuser websites second top answer gave me the solution I needed!</a></li>
+    It wasn't even the most upvoted answer. In fact, at the time I was directed to it, the top / most upvoted answer was actually a suggestion I foudn did not solve the problem!  So even if the correct answer is on the page it may not be perceived as such by those who read it and certainly may not be appreciated by anyone looking at it for the first time!  That is part of what motivated me to write this out in more detail.
+    If I struggled, when there is so much good work put into the Odin Project by so many good, kind, conscientious people who are trying to make the experience as good as possible for people like me doing the course and there is still not a pleasant answer, I imagine many others will go through the same thing. 
+    
+    A couple of non-trivial answers, including setting up Boot Option from UBS.
+
     <h1>Secure Boot</h1>
+
+
+    <h1>Don't bother changing the Registry Editor</h1>
+        <p>One of the suggestions was to do this:</p>
 
     <p>Again, these are the links to external websites I used when researching how to do this.<br>
     <a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">About The Odin Project</a>
