@@ -3,54 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This site is partly inspired by https://www.omgubuntu.co.uk/best-icon-themes-ubuntu which is optimized with the Yoast SEO plugin v23.3 - https://yoast.com/wordpress/plugins/seo/-->
+    <meta name="description" content="Step by step guide to installing linux ubuntu for dual boot / dual booting / dual-booting on a windows alienware laptop. Use Windows disk management, Rufus and ubuntu to optimise your linux set up for The Odin Project Foundations Course for aspiring web developers.">
     <title>Dual boot Linux and Windows</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>How to dual boot Linux Ubuntu on a Windows laptop</h1>
+    <h1 class="tophead">How to dual boot <w id="linuxword">Linux</w> <w id="ubuntuword">Ubuntu</w> on a <w id="windowsword">Windows</w> laptop</h1>
+    
+    <h2><img class="icon" src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo">The Odin Project</h2>
 
-    <h2>The Odin Project</h2>
-    <p>I have just begun learning about web development, enrolled on The Odin Project and I am working through the exercises</p>
+    <p class="firstpara">One of the first requirements of the Odin Project is to install linux.<br> I hope this guide helps you dive in to <strong>dual booting</strong> even more confidently than I did.</p>
 
-    <p>One of the first requirements is to install linux on one's machine. The Odin Project supports ubuntu and recommends various methods for getting access to linux on your machine.</p> 
-
-    <p>I am committed to learning and completing The Odin Project so I decide to commit to **dual boot** on my machine. I backed up my files and prepared for some unpleasantness in pursuit of programming knowledge.</p>
-
-    <p>This seems to be recommended but only once people have gotten comfortable with using linux in a more tentative / less committal way first, namely through using a virtual machine or WSL. Setting up a virtual machine also requires one to set aside storage space, albeit with somewhat less control over whether to save your file in SSD or HDD. Who knows, perhaps with this guide, more Odin Project people will be encouraged to go straight for dual boot and ultimately save themselves some time in the progress. I am glad I did and it would be great if this can (hopefully safely!) help others to do the same.</p>
-
-    <p>I will preface this by saying I am not an expert. I am a keen learner and want to share what I learned because the resources were good but not as complete as I would have liked to have full confidence making such a significant change to my laptop (and potentially destructive one both in terms of time and cost and for my future ambitions as a web developer). I found the answers were there but sometimes required digging through a few incorrect, incomplete or frankly unhelpful solutions first. I will also preface this by saying this is intended specifically for those who are using a Windows laptop  (specifically Windows 10 Alienware in my case). I do not know if it applies to other laptops, desktop, windows or other  operating system set ups. But I am confident if I had to do it again on this laptop, this is how I would do it.</p>
-
-    <p>I am pc. I am a big fan of microsoft excel and have used it for more than ten years in my working life. I have also always found it easiest to work with windows, in preference to mac OS or especially any google suite. That's just my preference.  However, from using linux for a few days I can say it is neat and clean and convenient and libre office is much more akin to excel, for example, than google sheets is. Anyway that is beside the point.</p>
-
-    <p><b>The good news is the dual boot works very well.</b> I am very grateful to have linux as an option and everything seems to be working well. I already understand and appreciate the benefit of having a distraction free (or at least freer) environment for working in.  However, I must note it has not been without its worrisome moments. There are a number of nasty warnings one has to have confidence to try to get through and there are times when it has looked like things have gone wrong - which at least probabilisticaly I expected to be the case. Nonetheless each of these issues has been commonly experienced and dealt with by others and each of the problems were also easily fixed in my case.</p>
-
-    <p>This web page is my attempt to consolidate what I learnt and to share it with others working through this part of The Odin Project Foundations course.</p>
-
-    <h2>These are the steps I had to go through to set up dual booting with linux ubuntu on my Windows laptop:</h2>
+    <p>These are the essential steps:</p>
 
     <ol>
-        <li><a href="./steps/1makespace.html">Use Disk Manager to set aside storage space on your laptop for ubuntu (ideally 30GB+)</a></li>
+        <li><a href="./steps/1makespace.html">Use Disk Manager to set aside storage space for ubuntu (ideally 30GB+)</a></li>
         <li><a href="./steps/2createusb.html">Use Rufus to convert your linux image file download into a USB drive</a></li>
-        <li><a href="./steps/3checksettings.html">Change Windows restart to Safe Mode then Change your UEFI/BIOS settings to AHCI from RAID On</a></li>
-        <li><a href="./steps/4bootubuntu.html">Use your USB drive to install ubuntu when you reboot</a></li>
-        <li><a href="./steps/5selectpackages.html">Thinking about which packages to install, keep or get rid of</a></li>
-        <li><a href="./steps/7dreadedwarnings.html">Dreaded Warnings encountered along the way and how you might fix them!</a></li>
-        <li><a href="./steps/6troubleshootlog.html">Troubleshooting and using logs files to optimise ubuntu set up, including graphics</a></li>
+        <li><a href="./steps/3checksettings.html">Change Windows restart to Safe Mode before changing UEFI/BIOS setting SATA Operation to "AHCI" from "RAID On"</a></li>
+        <li><a href="./steps/4bootubuntu.html">Use your USB drive to install ubuntu</a></li>
     </ol>
 
-    <p>Here are some links to external websites I used when researching how to do this. I have also tracked down a few answers on forums. I followed the discussions. I did my work and tried to figure it out. I have read the parts of the course about asking good questions and tried to provide the relevant information about my machine, what I had tried to figure it out and what I was asking for help with. I then searched through the prior discord discussions to see if this sort of problem had come up for people before. There were a couple of solutions given in forums. in the end the key was restarting in safe mode which allows windows to make the shift from RAID On to AHCI. [picture of Discord forum? Thanks to Scheals for my first ++]</p>
+    <p>And these are some follow up considerations, especially if you're tight for space. I set aside 19GB on my SSD and 200GB on my HDD which seems to be working <w id="linethroughredwavy">well</w>.</p>
 
     <ul>
-        <li><a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">ItsFOSS Article explaining the process for setting up dual boot</a></li>
-        <li><a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">Its FOSS Article specifically talking about using SSD for ubuntu installation including /root directory but using HDD for /home directory and other files and apps that don't require fast response</a></li>
-        <li><a href="https://medium.com/@alexalmond16/dual-boot-ubuntu-on-dell-alienware-aurora-r12-59119cc887e2" target="_blank" rel="noopener noreferrer">'Medium' Article where it suggests disabling Secure Boot</a></li>
-        <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Superuser websites second top answer gave me the solution I needed!</a></li>
+    <li><a href="./steps/5selectpackages.html">Think about which ubuntu packages to install, get rid of, or keep</a></li>
+    <li><a href="./steps/7dreadedwarnings.html">Dreaded Warnings encountered along the way and how you might fix them!</a></li>
+    <li><a href="./steps/6troubleshootlog.html">Troubleshooting and using logs files to optimise ubuntu set up</a></li>
+    <li><a href="./steps/8finetune.html">Fine-tuning your device, apps, drivers and settings for optimal performance, including graphics</a></li>
     </ul>
 
+    <p>Here are some links to external websites I used when researching how to do this:</p>
 
-
-    <p>And I should say, my preferred AI chatbot of choice is <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity</a> because they provide links for all the answers they give. Several of the website references I have used here were suggested by them as part of the answers to my questions. I have also found I have struggled more, for various reasons, when testing out other chatbots including co-pilot in  microsoft edge or on mobile app, OpenAI's chatgpt, Claude, merlin AI (aggregator of AI chatbots) and others. Let's be honest, all of these LLMs present errors sooner or later and they can be damaging - without any harm coming to the chatbots themselves - so having as much control over verifying what AI chatbots suggest to us makes sense.  Having sources used in formulating an answer and web links provided is desirable and provide some reassurance or at least the opportunity to check the quality (validity and reliability) of where these answers are coming from and should help identify or even eliminate some of the more fictitions hallucinations.  There is definitely a word of caution merited when it comes to using any AI chatbots because they can make some seemingly small suggestions that have far-reaching consequences despite being entirely unnecessary in the first place, so it is better to verify before following any AI chatbot instructions!<br>
-    
-    In fact there are often so many complicated answers provided (I guess depending on the assumed knowledge of the "typical" person asking the questions) that it makes it all the more important to simply and accurately lay out the steps and provide a working solution with readily verifiable authenticity.</p>
+    <ul class = "weblinks">
+        <li><a href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/" target="_blank" rel="noopener noreferrer">ItsFOSS Article explaining the process for setting up dual boot</a></li>
+        <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Its FOSS Article specifically talking about using SSD for ubuntu installation, including /root directory, but using HDD for /home directory storing files and apps that don't require fast response</a></li>
+        <li><a href="https://medium.com/@alexalmond16/dual-boot-ubuntu-on-dell-alienware-aurora-r12-59119cc887e2" target="_blank" rel="noopener noreferrer">'Medium' Article where it suggests disabling Secure Boot</a></li>
+        <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Superuser websites second top answer gave me the solution I needed!</a></li>
+        <li><a href=</li>
+    </ul>
 
 </body>
 </html>
