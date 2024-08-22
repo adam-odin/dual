@@ -257,7 +257,7 @@ nav.site-nav.nav-padding {
 .post-full-title {
     font-size:larger;
     text-justify: auto;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .icon {
