@@ -1,47 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!--event--><!--scroll-->
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content=""IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--This site is partly inspired by https://www.omgubuntu.co.uk/best-icon-themes-ubuntu which is optimized with the Yoast SEO plugin v23.3 - https://yoast.com/wordpress/plugins/seo/-->
-    <meta name="description" content="Step by step guide to installing linux ubuntu for dual boot / dual booting / dual-booting on a windows alienware laptop. Use Windows disk management, Rufus and ubuntu to optimise your linux set up for The Odin Project Foundations Course for aspiring web developers.">
     <title>Dual boot Linux and Windows</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Step by step guide to installing linux ubuntu for dual boot / dual booting / dual-booting on a windows alienware laptop. Use Windows disk management, Rufus and ubuntu to optimise your linux set up for The Odin Project Foundations Course for aspiring web developers.">
+    <!--This site is partly inspired by https://www.omgubuntu.co.uk/best-icon-themes-ubuntu which is optimized with the Yoast SEO plugin v23.3 - https://yoast.com/wordpress/plugins/seo/
+        and partly inspired by https://www.freecodecamp.org/news/how-to-use-css-overview-in-chrome-developer-tools/-->
+    <meta name=""HandheldFriendly" content="True">
+        <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1 class="tophead">How to dual boot <w id="linuxword">Linux</w> <w id="ubuntuword">Ubuntu</w> on a <w id="windowsword">Windows</w> laptop</h1>
-    
-    <h2><img class="icon" src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo">The Odin Project</h2>
-
-    <p class="firstpara">One of the first requirements of the Odin Project is to install linux.<br> I hope this guide helps you dive in to <strong>dual booting</strong> even more confidently than I did.</p>
-
-    <p>These are the essential steps:</p>
-
-    <ol>
-        <li><a href="./steps/1makespace.html">Use Disk Manager to set aside storage space for ubuntu (ideally 30GB+)</a></li>
-        <li><a href="./steps/2createusb.html">Use Rufus to convert your linux image file download into a USB drive</a></li>
-        <li><a href="./steps/3checksettings.html">Change Windows restart to Safe Mode before changing UEFI/BIOS setting SATA Operation to "AHCI" from "RAID On"</a></li>
-        <li><a href="./steps/4bootubuntu.html">Use your USB drive to install ubuntu</a></li>
-    </ol>
-
-    <p>And these are some follow up considerations, especially if you're tight for space. I set aside 19GB on my SSD and 200GB on my HDD which seems to be working <w id="linethroughredwavy">well</w>.</p>
-
-    <ul>
-    <li><a href="./steps/5selectpackages.html">Think about which ubuntu packages to install, get rid of, or keep</a></li>
-    <li><a href="./steps/7dreadedwarnings.html">Dreaded Warnings encountered along the way and how you might fix them!</a></li>
-    <li><a href="./steps/6troubleshootlog.html">Troubleshooting and using logs files to optimise ubuntu set up</a></li>
-    <li><a href="./steps/8finetune.html">Fine-tuning your device, apps, drivers and settings for optimal performance, including graphics</a></li>
-    </ul>
-
-    <p>Here are some links to external websites I used when researching how to do this:</p>
-
-    <ul class = "weblinks">
-        <li><a href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/" target="_blank" rel="noopener noreferrer">ItsFOSS Article explaining the process for setting up dual boot</a></li>
-        <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Its FOSS Article specifically talking about using SSD for ubuntu installation, including /root directory, but using HDD for /home directory storing files and apps that don't require fast response</a></li>
-        <li><a href="https://medium.com/@alexalmond16/dual-boot-ubuntu-on-dell-alienware-aurora-r12-59119cc887e2" target="_blank" rel="noopener noreferrer">'Medium' Article where it suggests disabling Secure Boot</a></li>
-        <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Superuser websites second top answer gave me the solution I needed!</a></li>
-        <li><a href=</li>
-    </ul>
-
+<body class="home-template"><!--overflow-->
+    <div class="site-wrapper"><!--flex-->
+        <nav class="site-nav nav-padding"><!--flex--><!--overflow-->
+            <div class=""><!--flex-->
+                <form id="search-form" data-test-label="search-bar"><!--event--><!--flex-->
+                    <div class="searchbox__wrapper" role="search">
+                        <label>Search</label>
+                        <input id="search input"></input>
+                        <pre></pre>
+                        <button></button>
+                        <div id="dropdown-container">
+                            <span class="">
+                                <span id=""><!--event-->
+                                    <div class="aa-dataset-1"></div>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="site-nav-middle"><!--flex-->
+                <a class="site-nav-logo" href="https://www.ghostery.com/" data-test-label="site-nav-logo">
+                    <img src="/img/ghostery-logo-primary.svg" alt="ghostery.com/design">
+                </a>
+            </div>
+            <div class="site-nav-right"><!--flex-->
+                <div class="nav-group">
+                    <a id="nav-forum" class="nav-forum" rel="noopener noreferrer" href="https://www.ghostery.com/design" target="_blank" data-test-label="forum-button">Forum</a>
+                    <!--whitespace-->
+                    <a id="nav-donate" rel="noopener noreferrer" href="https://www.ghostery.com/design" target="_blank" data-test-label="donate-button">Donate</a>
+                </div>
+            </div>
+        </nav>
+    <a id="banner" class="banner" data-test-label="banner" rel="noopener noreferrer" target="blank" href="https://www.theodinproject.com/" text-variation="default"></a><!--flex-->
+    <script></script>
+    <div id ="error-message"></div><!--overflow-->
+    <main id="site-main" class="site-main post-template outer">
+        <div class="inner ad-layout"><!--overflow-->
+            <article class="post-full post">
+                <header class="post-full-header">
+                    <section class="post-full-meta"></section><!--flex-->
+                    <h1 class="post-full-title">How to dual boot <w id="linuxword">Linux</w> <w id="ubuntuword">Ubuntu</w> on a <w id="windowsword">Windows</w> laptop</h1>
+                </header>
+                <div class="post-full-author-header" data-test-label="author-header-no-bio"></div>
+                <figure class="post-full-image"></figure>
+                <section>
+                    <div class="post-and-sidebar">
+                        <section>
+                            <h2><img class="icon" src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo">The Odin Project</h2>
+                            <p class="firstpara">One of the first requirements of the Odin Project is to install linux.<br> I hope this guide helps you dive in to <strong>dual booting</strong> even more confidently than I did.</p>
+                            <p>These are the essential steps:</p>
+                            <ol>
+                                <li><a href="./steps/1makespace.html">Use Disk Manager to set aside storage space for ubuntu (ideally 30GB+)</a></li>
+                                <li><a href="./steps/2createusb.html">Use Rufus to convert your linux image file download into a USB drive</a></li>
+                                <li><a href="./steps/3checksettings.html">Change Windows restart to Safe Mode before changing UEFI/BIOS setting SATA Operation to "AHCI" from "RAID On"</a></li>
+                                <li><a href="./steps/4bootubuntu.html">Use your USB drive to install ubuntu</a></li>
+                            </ol>
+                        
+                            <p>And these are some follow up considerations, especially if you're tight for space.<br>
+                            I set aside 19GB on my SSD and 200GB on my HDD which seems to be working <w id="linethroughredwavy">well</w>.</p>
+                        
+                            <ul>
+                            <li><a href="./steps/5selectpackages.html">Think about which ubuntu packages to install, keep, or get rid of</a></li>
+                            <li><a href="./steps/7dreadedwarnings.html">Dreaded warnings you may encounter along the way and how to fix them!</a></li>
+                            <li><a href="./steps/6troubleshootlog.html">Troubleshooting and using logs files to optimise ubuntu set up</a></li>
+                            <li><a href="./steps/8finetune.html">Fine-tuning your device, apps, drivers and settings for optimal performance, including graphics</a></li>
+                            </ul>
+                        
+                            <p>Here are some links to external websites I used when researching how to do this:</p>
+                        
+                            <ul class = "weblinks">
+                                <li><a href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/" target="_blank" rel="noopener noreferrer">ItsFOSS Article explaining the process for setting up dual boot</a></li>
+                                <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Its FOSS Article specifically talking about using SSD for ubuntu installation, including /root directory, but using HDD for /home directory storing files and apps that don't require fast response</a></li>
+                                <li><a href="https://medium.com/@alexalmond16/dual-boot-ubuntu-on-dell-alienware-aurora-r12-59119cc887e2" target="_blank" rel="noopener noreferrer">'Medium' Article where it suggests disabling Secure Boot</a></li>
+                                <li><a href="https://superuser.com/questions/1280141/switch-raid-to-ahci-without-reinstalling-windows-10" target="_blank" rel="noopener noreferrer">Superuser websites second top answer gave me the solution I needed!</a></li>
+                                <li><a href=</li>
+                            </ul>                        
+                        </section>
+                        <div class=sidebar"><!--flex-->
+                        <div class="ad-wrapper" data-test-label="ad-wrapper"></div>
+                        </div>
+                    </div>
+                    <div class="post-full-author-header" data-test-label="author-header-with-bio"></div>
+                    <p class="social-row" data-test-label="social-row-cta"></p>
+                </section>
+                <div class="banner-ad-bottom"></div>
+            </article>
+        </div>
+    </main>
+    </div>
+    <!--Google Tag Manager-->
+    <!--Cloudflare scripts-->
+    <footer class="site-footer"></footer>
 </body>
+<style type="text/css"></style>
 </html>

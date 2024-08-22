@@ -2,23 +2,94 @@
 */
 
 
-* {
+
+:root {
+    --dark-blue: #002ead;
+  --theme-color: #0a0a23;
+  --gray90: #0a0a23;
+  --gray85: #1b1b32;
+  --gray80: #2a2a40;
+  --gray75: #3b3b4f;
+  --gray45: #858591;
+  --gray15: #d0d0d5;
+  --gray10: #dfdfe2;
+  --gray05: #eeeef0;
+  --gray00: #fff;
+  --header-height: 38px;
+  --blue-dark: #002ead;
+}
+
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 62.5%;
+/*    -webkit-tap-highlight-color: transparent;*/
+    box-sizing: border-box;
     font-family: "Brush Script MT" "Lucida Handwriting" "Times New Roman";
-    /*padding-left: 20px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+* {
+    box-sizing: inherit;
+    /* probably none of the following apply: not the element for it...
+    font-family: "Brush Script MT" "Lucida Handwriting" "Times New Roman";
+    padding-left: 20px;
     margin-top: 1cm;
     margin-left: 1mm;
     margin-right: 12mm;
     margin-bottom:2.5cm;*/
 }
 
+head {
+    /*naaaaahthing*/
+}
 
 body {
+    background: #fff;
+    overflow-x: hidden;
+    color: var(--gray90);
+    /*font-family: ;*/
+    font-size: 1.5rem;
+    line-height: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    /*line-height: 1;*/
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga" on;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    /* from when I was first playing around before learning about box-sizing
     margin-top: 40px;
     margin-left: 75px;
     margin-right: 95px;
-    margin-bottom: 60px;
+    margin-bottom: 60px;*/
 }
 
+div {
+    letter-spacing: .4px;
+    white-space: no-wrap;
+    text-wrap-mode: nowrap; /* syntax auto | wrap | nowrap */ 
+    white-space-collapse: collapse;
+}
+
+/*should this be in class .site-nav or nav.padding or any .nav-something rather than nav {}?*/
+nav {
+    font-size: 1.2em;
+    font-family: Lato,sans-serif;
+    color: #fff;
+}
 
 h1 {
     /*padding-left: 2mm;*/
@@ -51,9 +122,142 @@ li {
     padding-bottom: 13px;
 }
 
-.tophead {
+.home-template {
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.site-nav {
+    /*z-index: 300+;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 1.2em;
+    /*font-family*/
+    height: var(--header-height);
+    background: var(--theme-colour);
+    position: fixed;
+    z-index: 1000;
+    color: #fff;
+    width: 100%;
+}
+
+.nav-padding {
+    padding: 0 15px;
+    margin: 0;
+    border: 0;
+    font: inherit;
+
+}
+
+nav.site-nav.nav-padding {
+    /*row*//*nowrap*/
+}
+
+/*flex items*/
+.site-nav-left {
+    display: flex;
+    flex: 1 0 35%;
+    margin-left: 0;
+    height: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+}
+
+.site-nav-middle {
+    display: flex;
+    flex: 1 0 20%;
+    margin-right: 0;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    letter-spacing: .4px;
+    margin-left: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    /*vertical-align: baseline; with display block vertical-align should not be used*/
+}
+
+.site-nav-right {
+    display: flex;
+    flex: 1 0 35%;
+    margin-left: 0;
+    height: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+}
+
+.site.nav.logo {
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    display: block;
+    margin: 0 5px;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height:  1em;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    /*vertical-align: baseline; with display block vertical-align should not be used*/
+}
+
+.post-and-sidebar {
+
+}
+
+.side-bar {
+    display: flex;
+    max-width: 300px;
+    flex-direction:column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+
+.post-full-title {
+    font-size:larger;
     text-justify: auto;
-    underline: true;
+    text-decoration: underline;
 }
 
 .icon {
@@ -65,12 +269,13 @@ li {
     text-indent: none;
 }
 
-.otherpara {
+.otherparas {
     text-indent: 50px;
 }
 
 .weblinks {
     list-style-type: none;
+    font-size: small;
 }
 
 #linuxword {
