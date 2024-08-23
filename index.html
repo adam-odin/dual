@@ -14,7 +14,7 @@
 <body class="home-template"><!--overflow-->
     <div class="site-wrapper"><!--flex-->
         <nav class="site-nav nav-padding"><!--flex--><!--overflow-->
-            <div class=""><!--flex-->
+            <div class="site-nav-left"><!--flex-->
                 <form id="search-form" data-test-label="search-bar"><!--event--><!--flex-->
                     <div class="searchbox__wrapper" role="search">
                         <label>Search</label>
@@ -33,7 +33,7 @@
             </div>
             <div class="site-nav-middle"><!--flex-->
                 <a class="site-nav-logo" href="https://www.ghostery.com/" data-test-label="site-nav-logo">
-                    <img src="/img/ghostery-logo-primary.svg" alt="ghostery.com/design">
+                    <img src="./img/ghostery-logo-primary.svg" alt="ghostery.com/design">
                 </a>
             </div>
             <div class="site-nav-right"><!--flex-->
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </nav>
-    <a id="banner" class="banner" data-test-label="banner" rel="noopener noreferrer" target="blank" href="https://www.theodinproject.com/" text-variation="default"></a><!--flex-->
+    <a id="banner" class="banner" data-test-label="banner" rel="noopener noreferrer" target="blank" href="https://www.theodinproject.com/" text-variation="default">BANNER?</a><!--flex-->
     <script></script>
     <div id ="error-message"></div><!--overflow-->
     <main id="site-main" class="site-main post-template outer">
@@ -52,7 +52,7 @@
             <article class="post-full post">
                 <header class="post-full-header">
                     <section class="post-full-meta"></section><!--flex-->
-                    <h1 class="post-full-title">How to dual boot <w id="linuxword">Linux</w> <w id="ubuntuword">Ubuntu</w> on a <w id="windowsword">Windows</w> laptop</h1>
+                    <h1 class="post-full-title">How to dual boot <span id="linuxword">Linux</span><!-- <span id="ubuntuword">Ubuntu</span>--> on a <span id="windowsword">Windows</span> laptop</h1>
                 </header>
                 <div class="post-full-author-header" data-test-label="author-header-no-bio"></div>
                 <figure class="post-full-image"></figure>
@@ -70,7 +70,7 @@
                             </ol>
                         
                             <p>And these are some follow up considerations, especially if you're tight for space.<br>
-                            I set aside 19GB on my SSD and 200GB on my HDD which seems to be working <w id="linethroughredwavy">well</w>.</p>
+                            I set aside 19GB on my SSD and 200GB on my HDD which seems to be working <span id="linethroughredwavy">well</span>.</p>
                         
                             <ul>
                             <li><a href="./steps/5selectpackages.html">Think about which ubuntu packages to install, keep, or get rid of</a></li>
